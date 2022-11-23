@@ -10,7 +10,7 @@ async function deploy() {
    console.log(`Deploying contracts using ${deployerAddress}`);
 
    const masterChef = await ethers.getContractFactory("MasterChef");
-   const masterChefInstance = await upgrades.deployProxy(masterChef, ["0x3452e23F9c4cC62c70B7ADAd699B264AF3549C19", token("0.001"), 7599000], {kind: 'uups'})
+   const masterChefInstance = await upgrades.deployProxy(masterChef, ["0x3452e23F9c4cC62c70B7ADAd699B264AF3549C19", token("0.001"), 0], {kind: 'uups'})
    await masterChefInstance.deployed()
    console.log(`MasterChef deployed to : ${masterChefInstance.address}`);
 
