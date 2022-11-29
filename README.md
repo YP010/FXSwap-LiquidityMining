@@ -14,10 +14,13 @@ FX Swap Liquidity Mining: https://fx-swap.io/#/farm
 6. Reward provider could contact the contract owner to add reward token for that specific LP pair.
 7. Only the MasterChefV2 contract could write RewarderViaMultiplier contract `onReward` function.
 8. Users could read `pendingTokens` function to check how much reward tokens they can earn based on the WFX reward amount.
+9. Reward Multiplier: Multiplier Value x 10 ** Reward Token Decimal
+    - E.g. Multiplier Value = 20 and Reward Token Decimal = 6
+    - Reward Multiplier = 20 x 10 ** 6 = 20,000,000
 
 ### Contracts Deployed to f(x)evm Testnet
-MasterChef deployed to : 0x8427f3573ba5691Cb442DaB111770DCd78ED3acF
-MasterChefV2 deployed to : [0x8427f3573ba5691Cb442DaB111770DCd78ED3acF](https://testnet-explorer.functionx.io/evm/address/0x8427f3573ba5691Cb442DaB111770DCd78ED3acF)
-RewardToken deployed to : [0xf65eAe2Bef3A32C0C79aba643f97CCab22bD2b53](https://testnet-explorer.functionx.io/evm/address/0xf65eAe2Bef3A32C0C79aba643f97CCab22bD2b53)
-RewardTokenExtra deployed to : [0xF704DB1f036B60De57C610C5F0370aE8747E54A9](https://testnet-explorer.functionx.io/evm/address/0xF704DB1f036B60De57C610C5F0370aE8747E54A9)
-RewarderViaMultiplier deployed to : [0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872](https://testnet-explorer.functionx.io/evm/address/0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872)
+- MasterChef deployed to : 0x8427f3573ba5691Cb442DaB111770DCd78ED3acF
+- MasterChefV2 deployed to : [0x8427f3573ba5691Cb442DaB111770DCd78ED3acF](https://testnet-explorer.functionx.io/evm/address/0x8427f3573ba5691Cb442DaB111770DCd78ED3acF)
+- RewardToken deployed to : [0xf65eAe2Bef3A32C0C79aba643f97CCab22bD2b53](https://testnet-explorer.functionx.io/evm/address/0xf65eAe2Bef3A32C0C79aba643f97CCab22bD2b53)
+- RewardTokenExtra deployed to : [0xF704DB1f036B60De57C610C5F0370aE8747E54A9](https://testnet-explorer.functionx.io/evm/address/0xF704DB1f036B60De57C610C5F0370aE8747E54A9)
+- RewarderViaMultiplier deployed to : [0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872](https://testnet-explorer.functionx.io/evm/address/0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872)
