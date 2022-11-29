@@ -4,7 +4,7 @@ FX Swap Liquidity Mining: https://fx-swap.io/#/farm
 
 ### RewarderViaMultiplier Contract
 1. Users can earn WFX and other reward tokens simultaneously.
-2. Each reward token is a `X` multipier of the WFX.
+2. Each reward token is a `X` multiplier of the WFX.
     - E.g. If token A multiplier is set as 20, for every 1 WFX reward, user also earns 20 token A.
 3. The reward will end if:
     - Multiplier is set as 0 or 
