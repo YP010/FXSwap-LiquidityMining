@@ -9,7 +9,8 @@ async function deploy() {
    deployerAddress = account.address;
    console.log(`Deploying contracts using ${deployerAddress}`);
 
-   const masterChef = await ethers.getContractFactory("MasterChef");
+   // Initial Deployment 
+   /*const masterChef = await ethers.getContractFactory("MasterChef");
    const masterChefInstance = await upgrades.deployProxy(masterChef, ["0x3452e23F9c4cC62c70B7ADAd699B264AF3549C19", token("0.001"), 0], {kind: 'uups'})
    await masterChefInstance.deployed()
    console.log(`MasterChef deployed to : ${masterChefInstance.address}`);
@@ -31,11 +32,29 @@ async function deploy() {
    await rewarderViaMultiplierInstance.deployed()
    console.log(`RewarderViaMultiplier deployed to : ${rewarderViaMultiplierInstance.address}`);
 
-   await rewardTokenInstance.mint(rewarderViaMultiplierInstance.address, token("1000000000")) // Mint 1 Billion to RewarderViaMultiplier
+   await rewardTokenInstance.mint(rewarderViaMultiplierInstance.address, token("1000000000")) // Mint 1 Billion to RewarderViaMultiplier*/
 
    // TO DO after deployment
    // Deposit WFX to Masterchef
    // Deposit LP Token then Add Rewarder
+
+   // Deploy Additional Reward Token to Test
+   /*const rewardTokenExtra = await ethers.getContractFactory("RewardTokenExtra")
+   const rewardTokenExtraInstance = await rewardTokenExtra.deploy()
+   await rewardTokenExtraInstance.deployed()
+   console.log(`RewardTokenExtra deployed to : ${rewardTokenExtraInstance.address}`);
+
+   const rewarderViaMultiplier = await ethers.getContractFactory("RewarderViaMultiplier")
+   const rewarderViaMultiplierInstance = await rewarderViaMultiplier.attach("0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872")
+   
+   await rewardTokenExtraInstance.mint(rewarderViaMultiplierInstance.address, token("1000000000")) // Mint 1 Billion to RewarderViaMultiplier
+   await rewarderViaMultiplierInstance.addRewardToken(rewardTokenExtraInstance.address, token("20"))*/
+
+   // Upgrade RewarderViaMultiplier to include pendingRewards
+   const rewarderViaMultiplier = await ethers.getContractFactory("RewarderViaMultiplier")
+   const rewarderViaMultiplierInstance = await upgrades.upgradeProxy("0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872", rewarderViaMultiplier)
+   await rewarderViaMultiplierInstance.deployed()
+   console.log(`RewarderViaMultiplier deployed to : ${rewarderViaMultiplierInstance.address}`)
 }
 
 deploy()
