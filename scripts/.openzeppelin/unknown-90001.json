@@ -1,0 +1,836 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0xC94F951b4d63b1Ee5F682bf64f2C9fc1EBdfd65A",
+      "txHash": "0x01338f16f3530fb2fb5f82a87eb0da2276e2001495854bb779f683994b3ae5bb",
+      "kind": "uups"
+    },
+    {
+      "address": "0x8041d00A0206e4A4fA84ea340A8bc3264d3bd1D6",
+      "txHash": "0x58d287c94258a834b6f791184e7f62ef9ec1f7a0dd054000fdb8283216d9aa00",
+      "kind": "uups"
+    },
+    {
+      "address": "0xf21e586e561187Ba5E791D30C91450a732D98b43",
+      "txHash": "0x94328b0e924b4fd7dc710a26727e73cafb25e5626deaee5b18c2ce0c73cd566d",
+      "kind": "uups"
+    },
+    {
+      "address": "0xfbCb2bce16eF9057e232bf22E1653dcfFE2Ef441",
+      "txHash": "0x0418b1ccbeb859234faaba921040e05a8865a95e96de66259aff0c351e4be5d5",
+      "kind": "uups"
+    },
+    {
+      "address": "0xB8b00e41f11AaaF993Cf4D6dbFaD7E634BC1447e",
+      "txHash": "0x3a007f0ee1394b07ff8c0200c63d3715dcc5015a96274829c9cb0c72b674ae80",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "7ad897bf3b45aa63ea66a8f487212fb20081a6e7d845373df7fda86fa7a9c49c": {
+      "address": "0xf2F54e4Ab471902172CDc5B288E58f71b95297D5",
+      "txHash": "0xef4924f6be78c5667b3db0c59efba5e85bfeba048790bcd540452446056322f5",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "reward",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_contract(IERC20Upgradeable)903",
+            "contract": "MasterChef",
+            "src": "contracts/MasterChef.sol:32"
+          },
+          {
+            "label": "rewardPerBlock",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_uint256",
+            "contract": "MasterChef",
+            "src": "contracts/MasterChef.sol:33"
+          },
+          {
+            "label": "BONUS_MULTIPLIER",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_uint256",
+            "contract": "MasterChef",
+            "src": "contracts/MasterChef.sol:34"
+          },
+          {
+            "label": "poolInfo",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_array(t_struct(PoolInfo)1967_storage)dyn_storage",
+            "contract": "MasterChef",
+            "src": "contracts/MasterChef.sol:36"
+          },
+          {
+            "label": "userInfo",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(UserInfo)1972_storage))",
+            "contract": "MasterChef",
+            "src": "contracts/MasterChef.sol:37"
+          },
+          {
+            "label": "totalAllocPoint",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_uint256",
+            "contract": "MasterChef",
+            "src": "contracts/MasterChef.sol:38"
+          },
+          {
+            "label": "startBlock",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_uint256",
+            "contract": "MasterChef",
+            "src": "contracts/MasterChef.sol:39"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(PoolInfo)1967_storage)dyn_storage": {
+            "label": "struct MasterChef.PoolInfo[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IERC20Upgradeable)903": {
+            "label": "contract IERC20Upgradeable",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_struct(UserInfo)1972_storage)": {
+            "label": "mapping(address => struct MasterChef.UserInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_struct(UserInfo)1972_storage))": {
+            "label": "mapping(uint256 => mapping(address => struct MasterChef.UserInfo))",
+            "numberOfBytes": "32"
+          },
+          "t_struct(PoolInfo)1967_storage": {
+            "label": "struct MasterChef.PoolInfo",
+            "members": [
+              {
+                "label": "lpToken",
+                "type": "t_contract(IERC20Upgradeable)903",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "allocPoint",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "lastRewardBlock",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "accRewardPerShare",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(UserInfo)1972_storage": {
+            "label": "struct MasterChef.UserInfo",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardDebt",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "7722d2b232829c088a233b1cfcff27baf93021630c4ed27af8c30aed9f29ee4a": {
+      "address": "0x1d39527810646a538Ceb09D52d97902610968BBD",
+      "txHash": "0x35283969e4eabad6d9301c2a265e21d658ed786cbc8493cbbc06211832837c9e",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "reward",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_contract(IERC20Upgradeable)903",
+            "contract": "XMasterChef",
+            "src": "contracts/XMasterChef.sol:36"
+          },
+          {
+            "label": "rewardPerBlock",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_uint256",
+            "contract": "XMasterChef",
+            "src": "contracts/XMasterChef.sol:37"
+          },
+          {
+            "label": "BONUS_MULTIPLIER",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_uint256",
+            "contract": "XMasterChef",
+            "src": "contracts/XMasterChef.sol:38"
+          },
+          {
+            "label": "poolInfo",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_array(t_struct(PoolInfo)1975_storage)dyn_storage",
+            "contract": "XMasterChef",
+            "src": "contracts/XMasterChef.sol:40"
+          },
+          {
+            "label": "userInfo",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(UserInfo)1980_storage))",
+            "contract": "XMasterChef",
+            "src": "contracts/XMasterChef.sol:41"
+          },
+          {
+            "label": "totalAllocPoint",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_uint256",
+            "contract": "XMasterChef",
+            "src": "contracts/XMasterChef.sol:42"
+          },
+          {
+            "label": "startBlock",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_uint256",
+            "contract": "XMasterChef",
+            "src": "contracts/XMasterChef.sol:43"
+          },
+          {
+            "label": "rewarder",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_array(t_contract(IRewarder)1952)dyn_storage",
+            "contract": "XMasterChef",
+            "src": "contracts/XMasterChef.sol:45"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_contract(IRewarder)1952)dyn_storage": {
+            "label": "contract IRewarder[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(PoolInfo)1975_storage)dyn_storage": {
+            "label": "struct XMasterChef.PoolInfo[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IERC20Upgradeable)903": {
+            "label": "contract IERC20Upgradeable",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IRewarder)1952": {
+            "label": "contract IRewarder",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_struct(UserInfo)1980_storage)": {
+            "label": "mapping(address => struct XMasterChef.UserInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_struct(UserInfo)1980_storage))": {
+            "label": "mapping(uint256 => mapping(address => struct XMasterChef.UserInfo))",
+            "numberOfBytes": "32"
+          },
+          "t_struct(PoolInfo)1975_storage": {
+            "label": "struct XMasterChef.PoolInfo",
+            "members": [
+              {
+                "label": "lpToken",
+                "type": "t_contract(IERC20Upgradeable)903",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "allocPoint",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "lastRewardBlock",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "accRewardPerShare",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(UserInfo)1980_storage": {
+            "label": "struct XMasterChef.UserInfo",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardDebt",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "cfc28131a525ea06f9965847c7f977f8f1fa7df1e7987afc84574e71b4ecd6b2": {
+      "address": "0x5C2344a1cE2675dB0aA5734b80e6324268144eeC",
+      "txHash": "0x5d35b07c7b1d1491a9a670841aa95547a22f9e2b23898f2ce88ed98a118e9ff0",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "rewardTokens",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_array(t_contract(IERC20Upgradeable)903)dyn_storage",
+            "contract": "RewarderViaMultiplier",
+            "src": "contracts/RewarderViaMultiplier.sol:16"
+          },
+          {
+            "label": "rewardMultipliers",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_array(t_uint256)dyn_storage",
+            "contract": "RewarderViaMultiplier",
+            "src": "contracts/RewarderViaMultiplier.sol:17"
+          },
+          {
+            "label": "CHEF_V2",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_address",
+            "contract": "RewarderViaMultiplier",
+            "src": "contracts/RewarderViaMultiplier.sol:18"
+          },
+          {
+            "label": "BASE_REWARD_TOKEN_DIVISOR",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_uint256",
+            "contract": "RewarderViaMultiplier",
+            "src": "contracts/RewarderViaMultiplier.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_contract(IERC20Upgradeable)903)dyn_storage": {
+            "label": "contract IERC20Upgradeable[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IERC20Upgradeable)903": {
+            "label": "contract IERC20Upgradeable",
+            "numberOfBytes": "20"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "9301c85a4a4e27b712fe15b13ed375655b61625ba65fa61209f3e9980183e819": {
+      "address": "0x2E7Fcf40B84e1458982006eb189ba0B4358D1053",
+      "txHash": "0x6c0468e33860bb9e95c6ef5a3a8128a5649ec7eb98e23f67a18cce5f9a1929b4",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "reward",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_contract(IERC20Upgradeable)903",
+            "contract": "MasterChefV2",
+            "src": "contracts/MasterChefV2.sol:36"
+          },
+          {
+            "label": "rewardPerBlock",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_uint256",
+            "contract": "MasterChefV2",
+            "src": "contracts/MasterChefV2.sol:37"
+          },
+          {
+            "label": "BONUS_MULTIPLIER",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_uint256",
+            "contract": "MasterChefV2",
+            "src": "contracts/MasterChefV2.sol:38"
+          },
+          {
+            "label": "poolInfo",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_array(t_struct(PoolInfo)1975_storage)dyn_storage",
+            "contract": "MasterChefV2",
+            "src": "contracts/MasterChefV2.sol:40"
+          },
+          {
+            "label": "userInfo",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(UserInfo)1980_storage))",
+            "contract": "MasterChefV2",
+            "src": "contracts/MasterChefV2.sol:41"
+          },
+          {
+            "label": "totalAllocPoint",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_uint256",
+            "contract": "MasterChefV2",
+            "src": "contracts/MasterChefV2.sol:42"
+          },
+          {
+            "label": "startBlock",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_uint256",
+            "contract": "MasterChefV2",
+            "src": "contracts/MasterChefV2.sol:43"
+          },
+          {
+            "label": "rewarder",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_array(t_contract(IRewarder)1952)dyn_storage",
+            "contract": "MasterChefV2",
+            "src": "contracts/MasterChefV2.sol:45"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_contract(IRewarder)1952)dyn_storage": {
+            "label": "contract IRewarder[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(PoolInfo)1975_storage)dyn_storage": {
+            "label": "struct MasterChefV2.PoolInfo[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IERC20Upgradeable)903": {
+            "label": "contract IERC20Upgradeable",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IRewarder)1952": {
+            "label": "contract IRewarder",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_struct(UserInfo)1980_storage)": {
+            "label": "mapping(address => struct MasterChefV2.UserInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_struct(UserInfo)1980_storage))": {
+            "label": "mapping(uint256 => mapping(address => struct MasterChefV2.UserInfo))",
+            "numberOfBytes": "32"
+          },
+          "t_struct(PoolInfo)1975_storage": {
+            "label": "struct MasterChefV2.PoolInfo",
+            "members": [
+              {
+                "label": "lpToken",
+                "type": "t_contract(IERC20Upgradeable)903",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "allocPoint",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "lastRewardBlock",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "accRewardPerShare",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(UserInfo)1980_storage": {
+            "label": "struct MasterChefV2.UserInfo",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardDebt",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

@@ -51,10 +51,16 @@ async function deploy() {
    await rewarderViaMultiplierInstance.addRewardToken(rewardTokenExtraInstance.address, token("20"))*/
 
    // Upgrade RewarderViaMultiplier to include pendingRewards
-   const rewarderViaMultiplier = await ethers.getContractFactory("RewarderViaMultiplier")
+   /*const rewarderViaMultiplier = await ethers.getContractFactory("RewarderViaMultiplier")
    const rewarderViaMultiplierInstance = await upgrades.upgradeProxy("0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872", rewarderViaMultiplier)
    await rewarderViaMultiplierInstance.deployed()
-   console.log(`RewarderViaMultiplier deployed to : ${rewarderViaMultiplierInstance.address}`)
+   console.log(`RewarderViaMultiplier deployed to : ${rewarderViaMultiplierInstance.address}`)*/
+
+   // Upgrade MasterChefV2 to include pendingRewardTentative
+   const masterChefV2 = await ethers.getContractFactory("MasterChefV2")
+   const masterChefV2Instance = await upgrades.upgradeProxy("0x8427f3573ba5691Cb442DaB111770DCd78ED3acF", masterChefV2)
+   await masterChefV2Instance.deployed()
+   console.log(`MasterChefV2 deployed to : ${masterChefV2Instance.address}`);
 }
 
 deploy()

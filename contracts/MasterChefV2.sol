@@ -110,22 +110,25 @@ contract MasterChefV2 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
     }
 
     function pendingReward(uint256 _pid, address _user) external view returns (uint256) {
+        uint256 pending = pendingRewardTentative(_pid, _user);
+        uint256 rewardBal = reward.balanceOf(address(this));
+        if (pending > rewardBal) {
+            pending = rewardBal;
+        }
+        return pending;
+    }
+    
+    function pendingRewardTentative(uint256 _pid, address _user) public view returns (uint256) {
         PoolInfo storage pool = poolInfo[_pid];
         UserInfo storage user = userInfo[_pid][_user];
         uint256 accRewardPerShare = pool.accRewardPerShare;
         uint256 lpSupply = pool.lpToken.balanceOf(address(this));
-        uint256 rewardBal = reward.balanceOf(address(this));
         if (block.number > pool.lastRewardBlock && lpSupply != 0) {
             uint256 multiplier = getMultiplier(pool.lastRewardBlock, block.number);
             uint256 rewardAmount = multiplier.mul(rewardPerBlock).mul(pool.allocPoint).div(totalAllocPoint);
             accRewardPerShare = accRewardPerShare.add(rewardAmount.mul(1e12).div(lpSupply));
         }
-
         uint256 pending = user.amount.mul(accRewardPerShare).div(1e12).sub(user.rewardDebt);
-
-        if (pending > rewardBal) {
-            pending = rewardBal;
-        }
         return pending;
     }
 
