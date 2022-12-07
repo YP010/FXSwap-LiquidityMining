@@ -58,15 +58,6 @@ contract RewarderViaMultiplier is Initializable, UUPSUpgradeable, OwnableUpgrade
         return (rewardTokens, amounts);
     }
 
-    function pendingTokensDebt(address user, uint256 rewardAmount) external view returns (IERC20Upgradeable[] memory tokens, uint256[] memory amounts) {
-        amounts = new uint256[](rewardTokens.length);
-        for (uint256 i; i < rewardTokens.length; ++i) {
-            uint256 pendingReward = rewardDebts[user][i].add(rewardAmount.mul(rewardMultipliers[i]).div(BASE_REWARD_TOKEN_DIVISOR));
-            amounts[i] = pendingReward;
-        }
-        return (rewardTokens, amounts);
-    }
-
     function getRewardTokens() external view returns (IERC20Upgradeable[] memory) {
         return rewardTokens;
     }
