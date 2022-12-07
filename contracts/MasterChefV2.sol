@@ -98,7 +98,7 @@ contract MasterChefV2 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
         }
     }
 
-    // DO NOT USE
+    // DO NOT USE - ONLY FOR ADDING REWARDERS FOR POOL 1 to 4
     function addRewarder(IRewarder[] calldata rewarders) external onlyOwner {
         for (uint256 i; i< rewarders.length; ++i) {
             rewarder.push(rewarders[i]);

@@ -1,4 +1,4 @@
-const { ethers } = require('hardhat');
+const { ethers, upgrades } = require('hardhat');
 
 function token(n) {
    return web3.utils.toWei(n, 'ether')
@@ -57,10 +57,30 @@ async function deploy() {
    console.log(`RewarderViaMultiplier deployed to : ${rewarderViaMultiplierInstance.address}`)*/
 
    // Upgrade MasterChefV2 to include pendingRewardTentative
-   const masterChefV2 = await ethers.getContractFactory("MasterChefV2")
+   /*const masterChefV2 = await ethers.getContractFactory("MasterChefV2")
    const masterChefV2Instance = await upgrades.upgradeProxy("0x8427f3573ba5691Cb442DaB111770DCd78ED3acF", masterChefV2)
    await masterChefV2Instance.deployed()
+   console.log(`MasterChefV2 deployed to : ${masterChefV2Instance.address}`);*/
+
+   // Upgrade RewarderViaMultiplier to add rewardDebts
+   /*const rewarderViaMultiplier = await ethers.getContractFactory("RewarderViaMultiplier")
+   const rewarderViaMultiplierInstance = await upgrades.upgradeProxy("0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872", rewarderViaMultiplier)
+   await rewarderViaMultiplierInstance.deployed()
+   console.log(`RewarderViaMultiplier deployed to : ${rewarderViaMultiplierInstance.address}`)*/
+
+   // Deploy on Mainnet
+   const masterChef = await ethers.getContractFactory("MasterChef");
+   await upgrades.forceImport("0x4bd522b2E25f6b1A874C78518EF25f5914C522dC", masterChef, {kind: 'uups'}) 
+   const masterChefV2 = await ethers.getContractFactory("MasterChefV2")
+   const masterChefV2Instance = await upgrades.upgradeProxy("0x4bd522b2E25f6b1A874C78518EF25f5914C522dC", masterChefV2)
    console.log(`MasterChefV2 deployed to : ${masterChefV2Instance.address}`);
+
+   await masterChefV2Instance.addRewarder(["0x0000000000000000000000000000000000000000", "0x0000000000000000000000000000000000000000", "0x0000000000000000000000000000000000000000", "0x0000000000000000000000000000000000000000"])
+
+   const rewarderViaMultiplier = await ethers.getContractFactory("RewarderViaMultiplier")
+   const rewarderViaMultiplierInstance = await upgrades.deployProxy(rewarderViaMultiplier, [["0x4DC015a60045fB20a3651b2e85AF986354197Fe5"], [token("9130")] , 18, masterChefV2Instance.address], {kind: 'uups'})
+   await rewarderViaMultiplierInstance.deployed()
+   console.log(`RewarderViaMultiplier deployed to : ${rewarderViaMultiplierInstance.address}`);
 }
 
 deploy()
