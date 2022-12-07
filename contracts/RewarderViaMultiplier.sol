@@ -17,6 +17,7 @@ contract RewarderViaMultiplier is Initializable, UUPSUpgradeable, OwnableUpgrade
     uint256[] public rewardMultipliers;
     address private CHEF_V2;
     uint256 private BASE_REWARD_TOKEN_DIVISOR;
+    mapping(address => mapping(uint256 => uint256)) private rewardDebts;
 
     function addRewardToken(IERC20Upgradeable _rewardToken, uint256 _multiplier) onlyOwner external {
         rewardTokens.push(_rewardToken);
@@ -31,26 +32,37 @@ contract RewarderViaMultiplier is Initializable, UUPSUpgradeable, OwnableUpgrade
     
     function onReward(address user, uint256 rewardAmount) onlyMCV2 external {
         for (uint256 i; i < rewardTokens.length; ++i) {
-            uint256 pendingReward = rewardAmount.mul(rewardMultipliers[i]).div(BASE_REWARD_TOKEN_DIVISOR);
+            uint256 pendingReward = rewardDebts[user][i].add(rewardAmount.mul(rewardMultipliers[i]).div(BASE_REWARD_TOKEN_DIVISOR));
             uint256 rewardBal = rewardTokens[i].balanceOf(address(this));
             if (pendingReward > rewardBal) {
+                rewardDebts[user][i] = pendingReward - rewardBal;
                 rewardTokens[i].safeTransfer(user, rewardBal);
             } else {
+                rewardDebts[user][i] = 0;
                 rewardTokens[i].safeTransfer(user, pendingReward);
             }
         }
     }
         
-    function pendingTokens(uint256 rewardAmount) external view returns (IERC20Upgradeable[] memory tokens, uint256[] memory amounts) {
+    function pendingTokens(address user, uint256 rewardAmount) external view returns (IERC20Upgradeable[] memory tokens, uint256[] memory amounts) {
         amounts = new uint256[](rewardTokens.length);
         for (uint256 i; i < rewardTokens.length; ++i) {
-            uint256 pendingReward = rewardAmount.mul(rewardMultipliers[i]).div(BASE_REWARD_TOKEN_DIVISOR);
+            uint256 pendingReward = rewardDebts[user][i].add(rewardAmount.mul(rewardMultipliers[i]).div(BASE_REWARD_TOKEN_DIVISOR));
             uint256 rewardBal = rewardTokens[i].balanceOf(address(this));
             if (pendingReward > rewardBal) {
                 amounts[i] = rewardBal;
             } else {
                 amounts[i] = pendingReward;
             }
+        }
+        return (rewardTokens, amounts);
+    }
+
+    function pendingTokensDebt(address user, uint256 rewardAmount) external view returns (IERC20Upgradeable[] memory tokens, uint256[] memory amounts) {
+        amounts = new uint256[](rewardTokens.length);
+        for (uint256 i; i < rewardTokens.length; ++i) {
+            uint256 pendingReward = rewardDebts[user][i].add(rewardAmount.mul(rewardMultipliers[i]).div(BASE_REWARD_TOKEN_DIVISOR));
+            amounts[i] = pendingReward;
         }
         return (rewardTokens, amounts);
     }
