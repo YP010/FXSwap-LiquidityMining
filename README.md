@@ -20,7 +20,14 @@ FX Swap Liquidity Mining: https://fx-swap.io/#/farm
 
 ### Contracts Deployed to f(x)evm Testnet
 - MasterChef deployed to : 0x8427f3573ba5691Cb442DaB111770DCd78ED3acF
-- MasterChefV2 deployed to : [0x8427f3573ba5691Cb442DaB111770DCd78ED3acF](https://testnet-explorer.functionx.io/evm/address/0x8427f3573ba5691Cb442DaB111770DCd78ED3acF)
-- RewardToken deployed to : [0xf65eAe2Bef3A32C0C79aba643f97CCab22bD2b53](https://testnet-explorer.functionx.io/evm/address/0xf65eAe2Bef3A32C0C79aba643f97CCab22bD2b53)
-- RewardTokenExtra deployed to : [0xF704DB1f036B60De57C610C5F0370aE8747E54A9](https://testnet-explorer.functionx.io/evm/address/0xF704DB1f036B60De57C610C5F0370aE8747E54A9)
-- RewarderViaMultiplier deployed to : [0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872](https://testnet-explorer.functionx.io/evm/address/0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872)
+- MasterChefV2 deployed to : [0x8427f3573ba5691Cb442DaB111770DCd78ED3acF](https://testnet.starscan.io/evm/address/0x8427f3573ba5691Cb442DaB111770DCd78ED3acF)
+- RewardToken deployed to : [0xf65eAe2Bef3A32C0C79aba643f97CCab22bD2b53](https://testnet.starscan.io/evm/address/0xf65eAe2Bef3A32C0C79aba643f97CCab22bD2b53)
+- RewardTokenExtra deployed to : [0xF704DB1f036B60De57C610C5F0370aE8747E54A9](https://testnet.starscan.io/evm/address/0xF704DB1f036B60De57C610C5F0370aE8747E54A9)
+- RewarderViaMultiplier deployed to : [0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872](https://testnet.starscan.io/evm/address/0x2faa0230b3a51D5B5b1e31cA18AD8a4A61b18872)
+
+### Contracts Deployed to f(x)evm Mainnet
+- MasterChef deployed to : 0x4bd522b2E25f6b1A874C78518EF25f5914C522dC
+- MasterChefV2 deployed to : [0x4bd522b2E25f6b1A874C78518EF25f5914C522dC](https://starscan.io/evm/address/0x4bd522b2E25f6b1A874C78518EF25f5914C522dC)
+- RewarderViaMultiplier deployed to : [0x1Ef89fE29D303136Be3d1FA3bE706dc2b7CedA23](https://starscan.io/evm/address/0x1Ef89fE29D303136Be3d1FA3bE706dc2b7CedA23)
+- FoxGaming(FXG) Token: [0x4DC015a60045fB20a3651b2e85AF986354197Fe5](https://starscan.io/evm/address/0x4DC015a60045fB20a3651b2e85AF986354197Fe5)
+    - RewardToken which its address is added to RewarderViaMultiplier.
